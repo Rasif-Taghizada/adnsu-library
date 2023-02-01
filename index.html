@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADNSU Library</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="head-container">
+        <div class="logo">
+          <img src="./Images/adnsu-logo.webp" alt="adnsu-logo" />
+        </div>
+        <div class="pages">
+          <ul>
+            <li><a href="#about">Haqqımızda</a></li>
+            <li><a href="#books">Kitablar</a></li>
+            <li><a href="#authors">Müəlliflər</a></li>
+            <li><a href="#">Əlaqə</a></li>
+            <li><a href="#">Digər</a></li>
+          </ul>
+        </div>
+        <div class="lang">
+          <span class="lang-az"><a href="#">AZ</a></span>
+          <span class="lang-ru"><a href="#">RU</a></span>
+          <span class="lang-en"><a href="#">EN</a></span>
+        </div>
+      </div>
+    </header>
+    <section id="about">
+      <h1>
+        Kitabı axtarın
+      </h1>
+      <div class="search-container">
+          <form>
+              <input type="text" id="search-input" />
+              <button id="search-button" type="submit">Search</button>
+          </form>
+          <table id="book-list">
+              <thead>
+                  <tr>
+                      <th>Kitabın adı</th>
+                      <th>Müəllifi</th>
+                      <th>Janr</th>
+                      <th>Qiyməti</th>
+                  </th>
+              </thead>
+              <tbody id="list-body">
+                  
+              </tbody>
+          </table>
+      </div>
+    </section>
+
+    <!-- <script src="/js/dropdown.js"></script> -->
+    <script src="./js/search.js"></script>
+  </body>
+</html>
