@@ -9,7 +9,6 @@ searchBar.addEventListener("keyup", (e) => {
         return character.title.includes(searchString)
     })
     displayCharacters(filteredCharacters);
-    console.log(filteredCharacters);
 })
 
 
@@ -17,9 +16,7 @@ const loadCharacters = async () => {
     try {
         const res = await fetch('/db/books.json');
         hpCharacters = await res.json();
-        console.log(hpCharacters);
         displayCharacters(hpCharacters);
-        // console.log(hpCharacters);
     } catch (error) {
         console.error(error)
     }
@@ -37,7 +34,7 @@ const displayCharacters = (characters) => {
                         <a href="#">${character.author}</a>
                     </td>
                     <td class="item">
-                        <a href="#">${character.price.janr}</a>
+                        <a href="#">${character.price.bolme}</a>
                     </td>
                     <td class="item">
                         <a href="#">${character.price.displayValue}</a>

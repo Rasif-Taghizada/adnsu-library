@@ -142,4 +142,8 @@ header ul a:hover,
     .search-container{
         width: 98%;
     }
+    #book-list th,
+    #book-list td{
+        padding: 12px 10px;
+    }
 }
