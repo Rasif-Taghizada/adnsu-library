@@ -34,10 +34,21 @@
         Kitabı axtarın
       </h1>
       <div class="search-container">
-          <form>
+          <div class="filter-container">
+            <div class="dropdown-container">
+              <select class="dropdown">
+                <option disabled selected>Filter by:</option>
+                <option value="title">Ad</option>
+                <option value="janr">Janr</option>
+                <option value="displayValue">Bölmə</option>
+                <option value="author">Müəllif</option>
+              </select>
+            </div>
+            <form>
               <input type="text" id="search-input" />
               <button id="search-button" type="submit">Search</button>
-          </form>
+            </form>
+          </div>
           <table id="book-list">
               <thead>
                   <tr>
