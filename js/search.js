@@ -6,7 +6,7 @@ console.log(searchBar.value);
 searchBar.addEventListener("keyup", (e) => {
     const searchString = e.target.value.toLowerCase();
     const filteredCharacters = hpCharacters.filter((character) => {
-        return character.title.includes(searchString)
+        return character.title.toLowerCase().includes(searchString)
     })
     displayCharacters(filteredCharacters);
 })
