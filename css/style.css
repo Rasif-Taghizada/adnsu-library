@@ -146,4 +146,7 @@ header ul a:hover,
     #book-list td{
         padding: 12px 10px;
     }
+    #about input[type="text"] {
+        width: 50%;
+    }
 }
