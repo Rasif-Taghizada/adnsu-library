@@ -74,6 +74,10 @@ header ul a:hover,
     width: 200px;
 }
 
+.hide {
+    display: none;
+}
+
 
 /* Search Container */
 .search-container {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="az">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -36,16 +36,29 @@
       <div class="search-container">
           <div class="filter-container">
             <div class="dropdown-container">
-              <select class="dropdown">
-                <option disabled selected>Filter by:</option>
-                <option value="title">Ad</option>
-                <option value="janr">Janr</option>
-                <option value="displayValue">Bölmə</option>
-                <option value="author">Müəllif</option>
+              <select class="dropdown" id="filterByJanr" onchange="searchFilter()">
+                <option disabled selected>Janrı seçin:</option>
+                <option value="bestseller">Bestseller</option>
+                <option value="fantastika">Fantastika</option>
+                <option value="detektiv">Detektiv</option>
+                <option value="şəxsi inkişaf">Şəxsi inkişaf və motivasiya</option>
+                <option value="marketinq">Marketinq</option>
+                <option value="psixologiya">Psixologiya</option>
+                <option value="fəlsəfə">Fəlsəfə</option>
+                <option value="bioqrafiya">Memuar və bioqrafiya</option>
+                <option value="ingilis">İngilis dilində olan kitablar</option>
+                <option value="rus">Rus dilində olan kitablar</option>
+                <option value="türk">Türk dilində olan kitablar</option>
+                <option value="tarix">Tarix</option>
+                <option value="siyasət">Siyasət</option>
+                <option value="azərbaycan-klassikləri">Azərbaycan klassikləri</option>
+                <option value="poeziya">poeziya</option>
+                <option value="dünya-klassikləri">Dünya klassikləri</option>
+                <option value="elmi-ədəbiyyat">Elmi ədəbiyyat</option>
               </select>
             </div>
             <form>
-              <input type="text" id="search-input" />
+              <input onkeyup="searchFilter()" type="text" id="search-input" placeholder="Kitabın adını yazın"/>
               <button id="search-button" type="submit">Search</button>
             </form>
           </div>
@@ -55,7 +68,6 @@
                       <th>Kitabın adı</th>
                       <th>Müəllifi</th>
                       <th>Janr</th>
-                      <th>Bölmə</th>
                   </th>
               </thead>
               <tbody id="list-body">
@@ -65,7 +77,6 @@
       </div>
     </section>
 
-    <!-- <script src="/js/dropdown.js"></script> -->
-    <script src="./js/search.js"></script>
+    <script src="./js/searchBook.js"></script>
   </body>
 </html>
