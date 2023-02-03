@@ -1,79 +1,68 @@
 const bookList = document.querySelector("#list-body");
-let hpCharacters = [];
+let filteredCharacters = [];
+const select = document.querySelector("#filterByJanr");
+const input = document.querySelector("#search-input");
 
+document.addEventListener("DOMContentLoaded",()=>{
+    input.addEventListener("input",searchFilterByInput);
+    select.addEventListener("change",searchFilterByOption);
+})
+
+const filterDatasBySelect = genre =>{
+    loadCharacters()
+    .then(data =>{
+        bookList.innerHTML = "";
+        for (let i = 0; i < data.length; i++) {
+            if (
+                data[i].janr.toLowerCase() === genre){
+                    bookList.innerHTML +=`
+                    <tr class="book ${data[i].janr.toLowerCase().slice(0,3)}">
+                        <td class="item title">
+                            <a href="#">${data[i].title}</a>
+                        </td>
+                        <td class="item author">
+                            <a href="#">${data[i].author}</a>
+                        </td>
+                        <td class="item janr">
+                            <a href="#">${data[i].janr}</a>
+                        </td>
+                    </tr>`;
+            }
+        }
+        input.value = "";
+    }    
+    )
+    .catch(err => console.log(err))
+}
 const loadCharacters = async () => {
-    try {
-        const res = await fetch('/db/data.json');
-        hpCharacters = await res.json();
-        displayCharacters(hpCharacters);
-    } catch (error) {
-        console.error(error)
-    }
+    const response = await fetch('/db/data.json');
+    const data = await response.json();
+    return data;
 }
-
-
-function displayCharacters(characters) {
-    return characters.map((data, index) => {
-        if(index<100){
-            // console.log(data)
-            bookList.innerHTML +=
-            `
-                <tr class="book ${data.janr.slice(0, 5).toLowerCase()}">
-                    <td class="item title">
-                        <a href="#">${data.title}</a>
-                    </td>
-                    <td class="item author">
-                        <a href="#">${data.author}</a>
-                    </td>
-                    <td class="item janr">
-                        <a href="#">${data.janr}</a>
-                    </td>
-                </tr>
-            `
-        }
-        else if(index>=100){
-            // console.log(data)
-            bookList.innerHTML +=
-            `
-                <tr class="book ${data.janr.slice(0, 5).toLowerCase()} hide">
-                    <td class="item title">
-                        <a href="#">${data.title}</a>
-                    </td>
-                    <td class="item author">
-                        <a href="#">${data.author}</a>
-                    </td>
-                    <td class="item janr">
-                        <a href="#">${data.janr}</a>
-                    </td>
-                </tr>
-            `
-        }
-    })
+const searchFilterByOption = () => {
+    const selectedJanr = select.options[select.selectedIndex].textContent.toLowerCase();
+    filterDatasBySelect(selectedJanr)
 }
-
-const searchFilter = () => {
-    // select option janr
-    const selectedJanr = document.querySelector("#filterByJanr").value.slice(0, 5);
-    // console.log(selectedJanr);
-    // Searching janr
-    const input = document.querySelector("#search-input");
-    // Display data
-    const booksData = document.getElementsByClassName("book")
-    // console.log(booksData);
-
-    let textBox = input.value;
-    for (let i = 0; i < booksData.length; i++) {
-        let className = booksData[i].querySelector(".title");
-        // console.log(className)
-        if (
-            (booksData[i].classList.contains(selectedJanr) ||
-                selectedJanr == "") &&
-            className.innerText.toLowerCase().indexOf(textBox.toLowerCase()) > -1
-        ) {
-            booksData[i].classList.remove("hide");
-        } else {
-            booksData[i].classList.add("hide");
+const filterDatasByİnput = (header,genre) =>{
+    try{
+        if (genre === "jan"){
+            alert("Janrı seçin: ")
+        }
+        else{
+                const books = document.querySelectorAll(`.${genre}`);
+            for(let i=0; i<=books.length;i++){
+                if((!books[i].children[0].children[0].textContent.toLowerCase().includes(header))){
+                    books[i].remove();
+                }
+                books[i].classList.contains(`${genre}`)
+            }
         }
     }
+    catch{
+    }
 }
-loadCharacters();
+const searchFilterByInput = e =>{
+    let textBox = input.value.toLowerCase();
+    filterDatasByİnput(textBox,select.options[select.selectedIndex].textContent.toLowerCase().slice(0,3));
+    e.preventDefault();
+}
