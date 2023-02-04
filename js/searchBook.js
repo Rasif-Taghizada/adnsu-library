@@ -55,7 +55,7 @@ const filterDatasByİnput = (header,genre) =>{
         else{
                 const books = document.querySelectorAll(`.${genre}`);
             for(let i=0; i<=books.length;i++){
-                if((!books[i].children[0].children[0].textContent.toLowerCase().includes(header))){
+                if((!books[i].firstElementChild.innerText.toLowerCase().includes(header))){
                     books[i].classList.add("hide");
                 }
                 else{
