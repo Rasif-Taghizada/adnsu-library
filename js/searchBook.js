@@ -3,9 +3,12 @@ let filteredCharacters = [];
 const select = document.querySelector("#filterByJanr");
 const input = document.querySelector("#search-input");
 
+
+
 document.addEventListener("DOMContentLoaded",()=>{
     input.addEventListener("input",searchFilterByInput);
     select.addEventListener("change",searchFilterByOption);
+
 })
 
 const filterDatasBySelect = genre =>{
@@ -40,7 +43,8 @@ const loadCharacters = async () => {
     return data;
 }
 const searchFilterByOption = () => {
-    const selectedJanr = select.options[select.selectedIndex].textContent.toLowerCase();
+    const selectedJanr =select.options[select.selectedIndex].textContent.toLowerCase();
+
     filterDatasBySelect(selectedJanr)
 }
 const filterDatasByİnput = (header,genre) =>{
@@ -52,9 +56,12 @@ const filterDatasByİnput = (header,genre) =>{
                 const books = document.querySelectorAll(`.${genre}`);
             for(let i=0; i<=books.length;i++){
                 if((!books[i].children[0].children[0].textContent.toLowerCase().includes(header))){
-                    books[i].remove();
+                    books[i].classList.add("hide");
                 }
-                books[i].classList.contains(`${genre}`)
+                else{
+                    books[i].classList.remove("hide");
+                }
+
             }
         }
     }
