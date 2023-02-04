@@ -4,11 +4,13 @@ const select = document.querySelector("#filterByJanr");
 const input = document.querySelector("#search-input");
 
 
+
 document.addEventListener("DOMContentLoaded",()=>{
     input.addEventListener("input",searchFilterByInput);
     select.addEventListener("change",searchFilterByOption);
 
 })
+
 const filterDatasBySelect = genre =>{
     loadCharacters()
     .then(data =>{
@@ -42,6 +44,7 @@ const loadCharacters = async () => {
 }
 const searchFilterByOption = () => {
     const selectedJanr =select.options[select.selectedIndex].textContent.toLowerCase();
+
     filterDatasBySelect(selectedJanr)
 }
 const filterDatasByİnput = (header,genre) =>{
@@ -58,6 +61,7 @@ const filterDatasByİnput = (header,genre) =>{
                 else{
                     books[i].classList.remove("hide");
                 }
+
             }
         }
     }
