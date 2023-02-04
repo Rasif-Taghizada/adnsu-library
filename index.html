@@ -36,8 +36,8 @@
       <div class="search-container">
           <div class="filter-container">
             <div class="dropdown-container">
-              <select class="dropdown" id="filterByJanr" onchange="searchFilter()">
-                <option disabled selected>Janrı seçin:</option>
+              <select class="dropdown" id="filterByJanr">
+                <option value="all" selected>Janrı seçin:</option>
                 <option value="bestseller">Bestseller</option>
                 <option value="fantastika">Fantastika</option>
                 <option value="detektiv">Detektiv</option>
@@ -45,20 +45,20 @@
                 <option value="marketinq">Marketinq</option>
                 <option value="psixologiya">Psixologiya</option>
                 <option value="fəlsəfə">Fəlsəfə</option>
-                <option value="bioqrafiya">Memuar və bioqrafiya</option>
+                <option value="memuar">Memuar və bioqrafiya</option>
                 <option value="ingilis">İngilis dilində olan kitablar</option>
-                <option value="rus">Rus dilində olan kitablar</option>
+                <option value="rus dili">Rus dilində olan kitablar</option>
                 <option value="türk">Türk dilində olan kitablar</option>
                 <option value="tarix">Tarix</option>
                 <option value="siyasət">Siyasət</option>
-                <option value="azərbaycan-klassikləri">Azərbaycan klassikləri</option>
+                <option value="azərbaycan">Azərbaycan klassikləri</option>
                 <option value="poeziya">poeziya</option>
-                <option value="dünya-klassikləri">Dünya klassikləri</option>
-                <option value="elmi-ədəbiyyat">Elmi ədəbiyyat</option>
+                <option value="dünya">Dünya klassikləri</option>
+                <option value="elmi ">Elmi ədəbiyyat</option>
               </select>
             </div>
-            <form>
-              <input onkeyup="searchFilter()" type="text" id="search-input" placeholder="Kitabın adını yazın"/>
+            <form >
+              <input type="text" id="search-input" placeholder="Kitabın adını yazın"/>
               <button id="search-button" type="submit">Search</button>
             </form>
           </div>
