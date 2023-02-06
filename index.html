@@ -11,33 +11,21 @@
     <header>
       <div class="head-container">
         <div class="logo">
-          <img src="./Images/adnsu-logo.webp" alt="adnsu-logo" />
+          <img src="./Images/ADNSU_new_logo.png" alt="adnsu-logo" />
         </div>
-        <div class="pages">
-          <ul>
-            <li><a href="#about">Haqqımızda</a></li>
-            <li><a href="#books">Kitablar</a></li>
-            <li><a href="#authors">Müəlliflər</a></li>
-            <li><a href="#">Əlaqə</a></li>
-            <li><a href="#">Digər</a></li>
-          </ul>
-        </div>
-        <div class="lang">
-          <span class="lang-az"><a href="#">AZ</a></span>
-          <span class="lang-ru"><a href="#">RU</a></span>
-          <span class="lang-en"><a href="#">EN</a></span>
+        <div class="nav-text">
+          <p>
+            <i>Kitabxana insan ruhunun bütün zənginliklərinin xəzinəsidir!</i>
+          </p>
         </div>
       </div>
     </header>
     <section id="about">
-      <h1>
-        Kitabı axtarın
-      </h1>
       <div class="search-container">
           <div class="filter-container">
             <div class="dropdown-container">
               <select class="dropdown" id="filterByJanr">
-                <option value="all" selected>Janrı seçin:</option>
+                <option value="all" selected disabled>Janrı seçin:</option>
                 <option value="bestseller">Bestseller</option>
                 <option value="fantastika">Fantastika</option>
                 <option value="detektiv">Detektiv</option>
@@ -56,18 +44,21 @@
                 <option value="dünya">Dünya klassikləri</option>
                 <option value="elmi ">Elmi ədəbiyyat</option>
               </select>
+              <p class="feedback-content first-feedback"><a href="https://forms.gle/cuxCLYgVBDLdsP8n8" target="_blank">Sorğu</a></p>
             </div>
             <form >
               <input type="text" id="search-input" placeholder="Kitabın adını yazın"/>
               <button id="search-button" type="submit">Search</button>
             </form>
+            <div class="feedback">
+              <p class="feedback-content second-feedback"><a href="https://forms.gle/cuxCLYgVBDLdsP8n8" target="_blank">Sorğu</a></p>
+            </div>
           </div>
           <table id="book-list">
               <thead>
                   <tr>
                       <th>Kitabın adı</th>
                       <th>Müəllifi</th>
-                      <th>Janr</th>
                   </th>
               </thead>
               <tbody id="list-body">

@@ -26,9 +26,6 @@ const filterDatasBySelect = genre =>{
                         <td class="item author">
                             <a href="#">${data[i].author}</a>
                         </td>
-                        <td class="item janr">
-                            <a href="#">${data[i].janr}</a>
-                        </td>
                     </tr>`;
             }
         }
