@@ -214,7 +214,7 @@ header {
         padding: 12px 6px;
     }
 
-    /* #about input[type="text"] {
-        width: 50%;
-    } */
+    #about input[type="text"] {
+        width: calc(100%-100px);
+    }
 }
