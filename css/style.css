@@ -193,7 +193,13 @@ header {
     .second-feedback{
         display: none;
     }
-    .first-feedback{
+    .search-container form{
+        justify-content: flex-start;
+    }
+    .feedback-content > *{
+        padding: 0 !important;
+    }
+    .feedback-content.first-feedback{
         display: block;
     }
     .nav-text{
@@ -215,6 +221,9 @@ header {
     }
 
     #about input[type="text"] {
-        width: calc(100%-100px);
+        width: calc(100% - 100px);
+    }
+    #about button[type="submit"] {
+        padding: 5px 10px;
     }
 }
